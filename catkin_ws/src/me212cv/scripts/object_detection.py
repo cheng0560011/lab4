@@ -186,9 +186,14 @@ def getXYZ(xp, yp, zc, fx,fy,cx,cy):
     # zc: depth
     ####
     # Note : please convert depth "zc" to real world coordinate "x, y, z"
-    # x = ??
-    # y = ??
-    # z = ??
+    x_camera = zc*((xp/fx)-(cx/fx))
+    y_camera = zc*((yp/fy)-(cy/fy))
+    z_camera = zc
+
+    x = z_camera
+    y = -x_camera
+    z = -y_camera
+
     return (x,y,z)
 
 
